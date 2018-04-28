@@ -1,0 +1,22 @@
+
+{{!-- 2. Make an index page with all the movies that shows their title, director, year, rating. --}}
+
+
+
+{{#each theList}}
+
+  <h3><a href='/movies/show/{{this._id}}'>{{this.title}}</a></h3>
+  <p>{{this.title}}</p>
+  <p>{{this.year}}</p>
+
+  <button type="submit">
+    <a href="/movies/edit/{{this._id}}">  Edit this entry  </a>
+  </button>
+
+
+  <form action="/movies/delete/{{this._id}}" method="post" >
+    <button type="submit"> Delete {{this.title}} from the database </button>
+  </form>
+
+
+{{/each}}
